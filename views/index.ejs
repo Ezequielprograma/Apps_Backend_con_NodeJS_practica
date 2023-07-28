@@ -10,11 +10,36 @@
 
     <h1>Productos</h1>
 
-    <ul>
+    <table class="default">
+
+        <tr>
+
+            <th><a href="/formulario-Xid">ID</a></th>
+        
+            <th><a href="/formulario-Xnombre">NOMBRE</a></th>
+        
+            <th><a href="/formulario-Xprecio">PRECIO</a></th>
+
+            <th><a href="/formulario-Xcantidad">CANTIDAD</a></th>
+
+            <th>CONFIGURACIÓN</th>
+        
+        </tr>
+        
         <% productos.forEach(function(producto) { %>
-            <li>id: <%= producto.id%>// Nombre:<%= producto.nombre%>// Precio:<%= producto.precio%>// Cantidad: <%= producto.cantidad%></li>
+
+            <tr>
+                <td><%= producto.id%></td>
+                <td><%= producto.nombre%></td>
+                <td><%= producto.precio%></td>
+                <td><%= producto.cantidad%></td>
+                <td><a href="/actualizar-formulario?id=<%=producto.id%>">Cambiar</a></td>
+            </tr>
+           
         <% }); %> 
-    </ul>
+      
+      
+      </table>
 
     <hr>
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar inventario</title>
+</head>
+<body>
+    <h1>Actualizar inventario</h1>
+
+    <form action="/actualizar-tarea" method="POST">
+        <input type="hidden" name="id" value="<%=producto.id%>">
+        <p>
+            <label for="nombre">Nueva Tarea: </label>
+            <input type="text" name="nombre" value="<%=producto.nombre%>">
+        </p>
+        <p>
+            <label for="precio">Nuevo Precio: </label>
+            <input type="number" name="precio" value="<%=producto.precio%>">
+        </p>
+        <p>
+            <label for="cantidad">Nueva Cantidad: </label>
+            <input type="number" name="cantidad" value="<%=producto.cantidad%>">
+        </p>
+        <button type="submit">Actualizar</button>
+    </form>
+</body>
+</html>
