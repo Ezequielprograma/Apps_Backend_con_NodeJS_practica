@@ -126,6 +126,25 @@ aplicacion.get('/formulario-Xid',function(peticion,respuesta){
 
 )
 
+aplicacion.get('/borrar',function(peticion,respuesta){
+
+    pool.getConnection(function(err,connection){
+        const query = `DELETE FROM inventario.productos;`
+
+        connection.query(query,function(error,filas,campos){
+            
+            respuesta.redirect("/")
+        })
+
+        connection.release()
+    })
+
+}
+
+)
+
+
+
 aplicacion.listen(8080,function(){
 
     console.log("Servidor Iniciado")
